@@ -9,7 +9,8 @@ const {
     createAuction,
     allAuctions,
     singleAuction,
-    // userAuctions,
+    userAuctions,
+    mySingleAuction,
     // setMoney,
 } = require("../controllers/main")
 
@@ -20,8 +21,8 @@ router.post("/login", login)
 router.post("/createAuction", createAuction)
 router.get("/allAuctions", allAuctions)
 router.get("/singleAuction/:id", singleAuction)
-// router.post("/userAuctions", userAuctions)
-// router.post("/bitsHistory", setMoney)
+router.get("/userAuctions", userAuctions)
+// router.post("/bidHistory", setMoney)
 
 
 module.exports = router

@@ -9,12 +9,8 @@ module.exports = {
         if(name.length >10) return res.send({success: false, message: "name too short "})
         if(password !== passwordTwo) return res.send({success: false, message: "bad password"})
         if(password.length < 3) return res.send({success: false, message: "password too short"})
-        // if(!validate(email)) return res.send({success: false, message: "bad email"})
 
         next()
     },
 
-    // validateAuction: async (req, res, next) => {
-    //     const {photo, title, }
-    // }
 }

@@ -89,28 +89,14 @@ module.exports = {
         res.send({success: false, message: id})
 
     },
-
-    // userAuctions: async (req, res) => {
-    //     const {user} = req.session
-    //
-    //     if (user) {
-    //         const userInfo = await userDb.findOne({name: user.name})
-    //         return res.send({success: true, message: "", info: userInfo})
-    //     }
-    //
-    //     res.send({success: false, message: "you are not logged in"})
-    // },
-    // updatePhoto: async (req, res) => {
-    //     const {link} = req.body
-    //     const {user} = req.session
-    //
-    //     if (user) {
-    //         await userDb.findOneAndUpdate({email: user.email}, {$set: {image: link}})
-    //         return res.send({success: true, message: ""})
-    //     }
-    //
-    //     res.send({success: false, message: "you are not logged in"})
-    // },
+    userAuctions: async (req, res) => {
+        const {user} = req.session
+        if (user) {
+            const posts = await auctionDb.find({name: user.name})
+            return res.send({success: true, message: "", posts})
+        }
+        res.send({success: false, message: "you are not logged in"})
+    },
 
 
     // setMoney: async (req, res) => {
